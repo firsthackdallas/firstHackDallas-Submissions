@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'pages' => 'pages#index'
   root 'pages#index'
+  get 'pages' => 'pages#index'
 
   resources :service_to_types
   resources :service_types
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :zips
   resources :addresses
   resources :service_providers
-
+ 
+  resources :users
 
 end
