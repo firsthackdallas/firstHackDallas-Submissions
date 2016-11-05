@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+  get 'pages' => 'pages#index'
+  root 'pages#index'
+
   resources :service_to_types
   resources :service_types
   resources :affiliations
@@ -8,9 +10,8 @@ Rails.application.routes.draw do
   resources :zips
   resources :addresses
   resources :service_providers
-=======
-  get 'pages' => 'pages#index'
->>>>>>> Jessie
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
