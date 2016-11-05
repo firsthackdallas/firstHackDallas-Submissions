@@ -24,16 +24,13 @@ class ServiceProvidersController < ApplicationController
   # POST /service_providers
   # POST /service_providers.json
   def create
-    @service_provider = ServiceProvider.new(service_provider_params)
-
-    respond_to do |format|
-      if @service_provider.save
-        format.html { redirect_to @service_provider, notice: 'Service provider was successfully created.' }
-        format.json { render :show, status: :created, location: @service_provider }
-      else
-        format.html { render :new }
-        format.json { render json: @service_provider.errors, status: :unprocessable_entity }
-      end
+    @service_provider = ServiceProvider.new(service_provider_params, :user_id = session[:user_id])
+    if @service_provider.save
+      flash[:message] = ['Successfully added a service!']
+      redirect_to '/users'
+    else
+      flash[:message] = @service_provider.errors.full_messages
+      redirect_to '/users/new'
     end
   end
 

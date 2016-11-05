@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105195928) do
+ActiveRecord::Schema.define(version: 20161105233309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,10 @@ ActiveRecord::Schema.define(version: 20161105195928) do
     t.text     "hours"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "service_providers", ["user_id"], name: "index_service_providers_on_user_id", using: :btree
 
   create_table "service_to_types", force: :cascade do |t|
     t.integer  "service_provider_id"
@@ -114,6 +117,7 @@ ActiveRecord::Schema.define(version: 20161105195928) do
   add_foreign_key "addresses", "service_providers"
   add_foreign_key "affiliations", "service_providers"
   add_foreign_key "contacts", "service_providers"
+  add_foreign_key "service_providers", "users"
   add_foreign_key "service_to_types", "service_providers"
   add_foreign_key "service_to_types", "service_types"
   add_foreign_key "services_followeds", "service_providers"
