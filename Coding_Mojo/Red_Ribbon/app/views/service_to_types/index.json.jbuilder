@@ -1,0 +1,1 @@
+json.array! @service_to_types, partial: 'service_to_types/service_to_type', as: :service_to_type

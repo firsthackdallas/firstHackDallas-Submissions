@@ -1,0 +1,25 @@
+<%= form_for(@zip_to_provider) do |f| %>
+  <% if @zip_to_provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zip_to_provider.errors.count, "error") %> prohibited this zip_to_provider from being saved:</h2>
+
+      <ul>
+      <% @zip_to_provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :zip_id %><br>
+    <%= f.text_field :zip_id %>
+  </div>
+  <div class="field">
+    <%= f.label :service_provider_id %><br>
+    <%= f.text_field :service_provider_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
