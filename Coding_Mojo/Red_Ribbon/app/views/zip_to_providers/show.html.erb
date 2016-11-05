@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @zip_to_provider.zip %>
+</p>
+
+<p>
+  <strong>Service provider:</strong>
+  <%= @zip_to_provider.service_provider %>
+</p>
+
+<%= link_to 'Edit', edit_zip_to_provider_path(@zip_to_provider) %> |
+<%= link_to 'Back', zip_to_providers_path %>

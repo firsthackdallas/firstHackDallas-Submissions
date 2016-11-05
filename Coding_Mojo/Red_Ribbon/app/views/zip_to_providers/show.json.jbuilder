@@ -1,0 +1,1 @@
+json.partial! "zip_to_providers/zip_to_provider", zip_to_provider: @zip_to_provider

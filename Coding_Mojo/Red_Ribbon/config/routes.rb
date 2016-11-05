@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :service_to_types
+  resources :service_types
+  resources :affiliations
+  resources :contacts
+  resources :zip_to_providers
+  resources :zips
+  resources :addresses
+  resources :service_providers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
