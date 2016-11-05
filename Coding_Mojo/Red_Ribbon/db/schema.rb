@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105163655) do
+ActiveRecord::Schema.define(version: 20161105195928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,25 @@ ActiveRecord::Schema.define(version: 20161105163655) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "services_followeds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "service_provider_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "services_followeds", ["service_provider_id"], name: "index_services_followeds_on_service_provider_id", using: :btree
+  add_index "services_followeds", ["user_id"], name: "index_services_followeds_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "screen_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "user_level"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "zip_to_providers", force: :cascade do |t|
     t.integer  "zip_id"
     t.integer  "service_provider_id"
@@ -97,6 +116,8 @@ ActiveRecord::Schema.define(version: 20161105163655) do
   add_foreign_key "contacts", "service_providers"
   add_foreign_key "service_to_types", "service_providers"
   add_foreign_key "service_to_types", "service_types"
+  add_foreign_key "services_followeds", "service_providers"
+  add_foreign_key "services_followeds", "users"
   add_foreign_key "zip_to_providers", "service_providers"
   add_foreign_key "zip_to_providers", "zips"
 end
