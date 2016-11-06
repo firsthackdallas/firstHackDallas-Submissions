@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	<title>Admin Page</title>
+</head>
+<body>
+<div id='container'>
+	<h3><a href="/addsp/{{ x['id'] }}">Add New Service Provider</a></h3>
+	<h2>Welcome to the Admin Page</h2>
+	<table>
+	<tr>
+		<th>Service Provider</th>
+		<th>Address</th>
+		<th>Phone</th>
+		<th>Edit Info</th>
+	</tr>
+	{% for x in services %}
+	<tr>
+		<td>{{ x['name'] }}</td>
+		<td>{{ x[''street'] }} {{ x['city'] }}, {{ x['state'] }} {{ x['zip'] }}</td>
+		<td>{{ x['phone'] }}</td>
+		<a href='/update_admin'>Update</a>
+	</tr>
+	{% endfor %}
+	</table>
+
+</div>
+</body>
+</html>

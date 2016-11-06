@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	<title>Update Admin Page</title>
+</head>
+<body>
+<p><a href='/admin'>Admin Home</a></p>
+	<h2>Edit Your Service Provider's Info</h2>
+
+	<form action="/CHANGE_THIS" method='post'> 
+
+		   <!-- CHANGE ACTION ROUTE -->
+			<p><input type='text' placeholder="{{ ServiceProvider['name'] }}" name='name'></p>
+			<p><input type='text' placeholder="{{ x['street'] }}" name='street'></p>
+			<p><input type='text' placeholder="{{ x['city'] }}" name='city'> | 
+			<input type='text' placeholder="{{ x['state'] }}" name='state'> | 
+			<input type='text' placeholder="{{ x['zip'] }}" name='zip'></p>
+			<p><input type='text' placeholder="{{ x['phone'] }}" name='phone'></p>
+		</div>  <!-- BODY_TOPLEFT -->
+		<div class='body_topright'>
+			<p>Faith Based Service: <input type='text' name='faith'></p>
+			<p>Hours of Operation: <input type='text' name='hoo'></p>
+				<table>
+					<tr>
+						<th>Eligibility Requirements</th>
+					</tr>
+					{% for x in eligibility %}
+					<tr>	
+						<td>{{ x['restriction'] }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			<p><input type='text' name='restriction'></p>
+			<p><input type='submit' value='Update'></p>
+
+				<table>
+					<tr>
+						<th>Required Documentation</th>
+					</tr>		
+					{% for x in documentation %}
+					<tr>
+						<td>{{ x['documentation'] }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			<p><input type='text' name='documentation'></p>
+			<p><input type='submit' value='Update'></p>
+
+		</div>  <!-- BODY_TOPRIGHT -->
+
+		<div class='body_bottom'> 
+			<table>
+					<tr>
+						<th>Services</th>
+					</tr>		
+					{% for x in services %}
+					<tr>
+						<td>{{ x['services'] }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			<p><input type='text' name='services'></p>
+			<p><input type='submit' value='Update'></p>
+
+		</div>  <!-- BODY BOTTOM -->
+
+	</form>
+
+</body>
+</html>
