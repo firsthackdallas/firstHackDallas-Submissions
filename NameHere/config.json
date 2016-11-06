@@ -1,0 +1,7 @@
+{
+	"mongoUrl": "mongodb://192.168.1.17/test",
+	"apiKey": "b43e5e8d5d13fe1567cb231866243da9",
+	"baseUrl": "http://food2fork.com/api/",
+	"googleAPI": "AIzaSyCLYitJFB87SGWHWTIFwgl-BXkz6i0A0wM",
+	"myLocation": "900 Jackson Street #410, Dallas, TX 75202"
+}
