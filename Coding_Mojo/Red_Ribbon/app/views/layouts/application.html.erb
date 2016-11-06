@@ -71,6 +71,7 @@
                             <div class="col-lg-12">
                                 <div class="text-center"><h3><b>Log In</b></h3></div>
                                 <form id="ajax-login-form" action="/sessions" method="POST" role="form" autocomplete="off">
+                                	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>' >
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="email" name="users[email]" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autocomplete="off">
