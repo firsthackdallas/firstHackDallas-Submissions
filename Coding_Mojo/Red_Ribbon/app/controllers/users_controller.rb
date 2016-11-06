@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:index, :show, :edit]
 
       def index
         if session[:user_id] == nil
