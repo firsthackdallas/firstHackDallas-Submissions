@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
       def index
-           @users = User.all
+        if session[:user_id] == nil
+          flash[:message] = ["You must log in to do that"]
+          redirect_to :root
+        elsif session[:user_id]
+          render 'users/index'
+        end
       end
 
       def show
@@ -20,7 +25,7 @@ class UsersController < ApplicationController
             #session[:user] = {id:@user.id, user_level: @user.user_level }
             redirect_to "/users"
         else
-            flash[:errors] = @user.errors.full_messages
+            flash[:message] = @user.errors.full_messages
             redirect_to "/users/new"
         end
       end
@@ -34,14 +39,18 @@ class UsersController < ApplicationController
         if @user.update_attributes(user_params)
               redirect_to "/users"
         else 
-              flash[:errors] = @user.errors.full_messages
+              flash[:message] = @user.errors.full_messages
               redirect_to "/users/#{@user.id}/edit"
         end
       end
 
       private
+      def get_user
+        @user = User.find(session[:user_id])
+      end
 
       def user_params
         params.require(:users).permit(:screen_name, :email, :password, :password_confirmation)
       end
+
 end 

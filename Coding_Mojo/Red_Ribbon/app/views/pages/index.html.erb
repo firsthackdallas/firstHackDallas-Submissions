@@ -45,7 +45,7 @@
     <div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -59,11 +59,52 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">My Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#register">Join Our Community!</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="#about">About Us/Contact</a></li>
+                <li><a href="/service_providers">All Services</a></li>
+                <li><a href="/users">My Services</a></li>
+                <li><a href="/users/new">Join Our Community!</a></li>
+                                  <li class="dropdown">
+                        <a href="/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                            <div class="col-lg-12">
+                                <div class="text-center"><h3><b>Log In</b></h3></div>
+                                <form id="ajax-login-form" action="/sessions" method="POST" role="form" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="users[email]" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autocomplete="off">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                <label for="remember"> Remember Me</label>
+                                            </div>
+                                            <div class="col-xs-5 pull-right">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                </form>
+                            </div>
+                        </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -77,6 +118,11 @@
 
     <!-- Carousel
     ================================================== -->
+    <% if flash[:message] %>
+      <% flash[:message].each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    <% end %>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -91,7 +137,7 @@
             <div class="carousel-caption">
               <h1>You've come to the right place.</h1>
               <h3>Feeling overwhelmed? Don't worry, you are not alone. Join our community to start your journey with us!</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign Up Today</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/users/new" role="button">Sign Up Today</a></p>
             </div>
           </div>
         </div>
@@ -101,7 +147,7 @@
             <div class="carousel-caption">
               <h1>We're here to help!</h1>
               <h3>We want you to be informed and supported in every possible way. Check out some of our services!</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse Services</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/service_providers" role="button">Browse Services</a></p>
             </div>
           </div>
         </div>
@@ -111,7 +157,7 @@
             <div class="carousel-caption">
               <h1>Get Involved</h1>
               <h3>Make someone smile today! See the ways you can be involved with Red Ribbon.</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Get Involved!</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/users/new" role="button">Get Involved!</a></p>
             </div>
           </div>
         </div>
@@ -139,19 +185,19 @@
           <img class="img-circle" src="http://viewcolleges.com/wp-content/uploads/pep-vn/ba/ba740e35/hugging-people-640x427-7f.jpg" width="140" height="140">
           <h2>Hello, friend!</h2>
           <p>Devastating news can be just that: devastating. Join a supportive community of people sharing knowledge and information on the reality of living with HIV/AIDS.</p>
-          <p><a class="btn btn-default" href="#" role="button">Join! &raquo;</a></p>
+          <p><a class="btn btn-default" href="/users/new" role="button">Join! &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="https://cdn.psychologytoday.com/sites/default/files/blogs/108067/2014/08/157010-161198.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Support</h2>
           <p>We aim to organize the most update-to-date platform that allows those impacted by HIV (whether you are the patient, a parent, sibling or friend); to get all the resources needed to take your next steps.</p>
-          <p><a class="btn btn-default" href="#" role="button">Services &raquo;</a></p>
+          <p><a class="btn btn-default" href="/service_providers" role="button">Services &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="https://c2.staticflickr.com/8/7557/15761889077_8a68c0083a_b.jpg" width="140" height="140">
           <h2>Get Involved!</h2>
           <p>We get by with a little help from (you)! If you want to donate your time, spare change, smiles, hugs, etc; let us know!</p>
-          <p><a class="btn btn-default" href="#" role="button">Help &raquo;</a></p>
+          <p><a class="btn btn-default" href="/users/new" role="button">Help &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
