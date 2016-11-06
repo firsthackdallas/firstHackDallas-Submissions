@@ -1,0 +1,60 @@
+﻿First Hack Dallas Hackathon Project Scope
+
+
+Objective:  Create a functional web application following the guidelines outlined in this document.
+
+
+Core Idea:  To create a hub for those impacted by HIV where they can obtain information about services available to them in the DFW community.
+
+
+Desired Features:
+* Primary:
+* Services: The core of the application.  Services should be logically categorized.  Each service should provide the following information:
+   * Name of Service Provider
+   * The type of service provided.
+   * Eligibility requirements
+      * Service areas (zip code based)
+      * Income restrictions
+      * Gender (make sure to include ALL options)
+      * Dependants
+   * Faith-based services (Y/N and affiliation)
+   * Required Documentation
+   * A description of the service being provided.
+   * Location information.
+   * Contact information.
+   * Hours of operation (if applicable).
+   * A link to the organization’s website (if available).
+
+
+* User Profile Generator:  This feature should ask the user questions about themselves, their condition and the services they are interested in and, through the questions, build an anonymous profile (no PII will be included other than email account and zip code).  The profile will be used to auto-feed logged in users pertinent information.  System must allow for questions, answers (in multiple-choice format) and fields can be modified with no data loss - Dynamic Survey
+
+
+* Service information should be broad, but accessible with or without a profile.  Logged-in users will have additional functionality (save/follow, private notation, etc) . Relevant information/services should be presented when a user has logged in, based on their profile.
+
+
+
+
+* Admin Dashboard (Content Management System)
+
+
+* Trouble ticketing system for content on site by user base (Add/Delete/Change recommendations) 
+
+
+* Social features such as a forum/message board, 1:1 messaging, ratings for service providers, comments for service providers, etc…
+
+
+* A calendar of relevant events (public and private)
+
+
+* A search feature for services, service providers, and possibly more.
+
+
+* Secondary:
+   * Reminders/Notifications
+      * To Service Providers to update their profile
+      * Users - 
+         * Update your profile (after set period of inactivity)
+         * Notifications of changes to service providers you are following
+         * Notification of new providers/events
+         * Reminders regarding events you have scheduled
+   * User Dashboard

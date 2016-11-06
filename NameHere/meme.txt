@@ -1,0 +1,16 @@
+Main Features Planning:
+
+1. Able to show all services
+ - Google API for distance
+ - Pull from MongoDB
+
+2. Create profile
+ - Push to MongoDB
+
+3. Social features
+ - "I have feedback/comment"
+
+BONUS:
+- Able to send pictures
+- Able to send music back (Spotify)
+- Ticket: from user -> admin
