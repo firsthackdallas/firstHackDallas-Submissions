@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service Providers</title>
+</head>
+<body>	
+	<a href='/'>Home</a>
+	<div id='container'>
+	<h2>Service Providers in your area</h2>
+
+			{% for x in providers %}
+		<div class='serviceproviders'>
+			<div class='left'>
+				<p>{{ x['name'] }}</p>
+				<p>{{ x['phone'] }}</p>
+				<p>{{ x['street'] }} {{ x['city'] }}, {{ x['state'] }} {{ x['zip'] }}</p>
+			</div>  <!-- LEFT -->
+			<div class='right'>
+				<p>Documents Need:</p>
+				<ul><li>Drivers's License</li>
+				<li>Proof of Address</li>
+				<li>Insurance Card</li>
+				<li>Proof of HIV</li></ul>
+			</div>  <!-- RIGHT -->
+	</div> <!-- SERVICE PROVIDERS -->
+			{% endfor %}
+	<a href='/'>Home</a>
+</body>
+</html>
