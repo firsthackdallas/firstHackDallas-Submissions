@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Zip To Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zip</th>
+      <th>Service provider</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zip_to_providers.each do |zip_to_provider| %>
+      <tr>
+        <td><%= zip_to_provider.zip %></td>
+        <td><%= zip_to_provider.service_provider %></td>
+        <td><%= link_to 'Show', zip_to_provider %></td>
+        <td><%= link_to 'Edit', edit_zip_to_provider_path(zip_to_provider) %></td>
+        <td><%= link_to 'Destroy', zip_to_provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zip to provider', new_zip_to_provider_path %>

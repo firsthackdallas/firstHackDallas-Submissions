@@ -1,0 +1,1 @@
+json.array! @zip_to_providers, partial: 'zip_to_providers/zip_to_provider', as: :zip_to_provider

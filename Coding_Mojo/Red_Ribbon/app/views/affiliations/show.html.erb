@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service provider:</strong>
+  <%= @affiliation.service_provider %>
+</p>
+
+<p>
+  <strong>Affiliation:</strong>
+  <%= @affiliation.affiliation %>
+</p>
+
+<%= link_to 'Edit', edit_affiliation_path(@affiliation) %> |
+<%= link_to 'Back', affiliations_path %>
