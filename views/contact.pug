@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .page-header(style="margin-top:100px;")
+   h1.center.text-center HELP US STRENGTHEN OUR COMMUNITY
+   .container-fluid.pageHeader
+     img(src="../img/dallas.jpg", width="100%", height ="300", alt = 'Dallas Skyline')
+
+   .container-fluid.contact-form
+     h3 Contact Form
+     form.form-horizontal(method='POST')
+       input(type='hidden', name='_csrf', value=_csrf)
+       .form-group.col-md-3
+          input.form-control(type='text', name='name', id='name', autofocus=true, placeholder="Name")
+       .form-group.col-md-3
+          input.form-control(type='text', name='email', id='email', placeholder="Email")
+       .form-group
+         .col-md-5
+           input.form-control(type='text', name='email', id='email', placeholder="Subject")
+       .form-group
+         .col-md-7
+           textarea.form-control(name='message', id='message', rows='7', placeholder="Message")
+       .form-group
+         .col-sm-offset-3.col-sm-8
+           button.btn.btn-primary(type='submit')
+             i.fa.fa-envelope
+             | Send
