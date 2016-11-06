@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :zips
   resources :addresses
   resources :service_providers
+  resources :sessions
  
   resources :users
 
