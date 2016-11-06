@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  validates :screen_name, :email, :user_level, presence: true
+  validates :screen_name, :email, presence: true
 end
