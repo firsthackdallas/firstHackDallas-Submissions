@@ -1,0 +1,36 @@
+
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Profile Generator</h1>
+        <p class="lead">Please create a secure profile in order to receive more personalized information.</p>
+        <form action="/users" method="POST">
+        	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	        <p>Username:<input type="text" name="users[screen_name]"></p>
+	        <p>Email:<input type="email" name="users[email]"></p>
+	        <p>Password:<input type="password" name="users[password]"></p>
+          <p>Confirm Password:<input type="password" name="users[password_confirmation]"></p>
+	        <p>What is your status? Please select one:</p>
+	        <p><input type="checkbox" name="patient" value="off"> Patient</p>
+	        <p><input type="checkbox" name="family" value="off"> Family Member</p>
+	        <p><input type="checkbox" name="friend" value="off"> Friend</p>
+	        <p>Which of the following would you like more information about? Click all that apply.</p>
+	        <p><input type="checkbox" name="case" value="off"> Case Management - Medical</p>
+	        <p><input type="checkbox" name="counseling" value="off"> Counseling</p>
+	        <p><input type="checkbox" name="education" value="off"> Educational Services</p>
+	        <p><input type="checkbox" name="financial" value="off"> Financial Assistance</p>
+	        <p><input type="checkbox" name="health" value="off"> Health Insurance Assistance</p>
+	        <p><input type="checkbox" name="outreach" value="off"> Outreach Services</p>
+	        <p><input type="checkbox" name="referral" value="off"> Referral Services</p>
+	        <p><input type="submit" value="submit"></p>
+        </form>
+
+
+
+
+
+      </div>
+
+    </div><!-- /.container -->
+

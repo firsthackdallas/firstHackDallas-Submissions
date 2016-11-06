@@ -30,6 +30,24 @@ body {
 .navbar-wrapper .navbar .container {
   width: auto;
 }
+/* Fixed navbar */
+body {
+    padding-top: 90px;
+}
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .dropdown-lr h3 {
+    color: #eee;
+  }
+  .dropdown-lr label {
+    color: #eee;
+  }
+}
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -60,7 +78,9 @@ body {
 h3, h1{
     text-shadow: 2px 2px black;
 }
-
+.btn btn-lg btn-primary{
+  color:white;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
