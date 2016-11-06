@@ -24,7 +24,8 @@ class ServiceProvidersController < ApplicationController
   # POST /service_providers
   # POST /service_providers.json
   def create
-    @service_provider = ServiceProvider.new(service_provider_params, :user_id = session[:user_id])
+    @service_provider = ServiceProvider.new(service_provider_params)
+    @service_provider.user_id = session[:user_id]
     if @service_provider.save
       flash[:message] = ['Successfully added a service!']
       redirect_to '/users'
